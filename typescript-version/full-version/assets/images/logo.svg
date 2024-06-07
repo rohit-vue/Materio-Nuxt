@@ -1,0 +1,16 @@
+<svg width="28" height="22" viewBox="0 0 30 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Logo">
+<g id="logo">
+<path id="Rectangle" fill-rule="evenodd" clip-rule="evenodd" d="M1.47602 0.435309L6.7986 3.72193C7.08419 3.89828 7.25806 4.21006 7.25806 4.54582V19.5604C7.25806 19.9009 7.07929 20.2163 6.78724 20.3912L1.46466 23.5776C1.00603 23.8522 0.411763 23.7028 0.137322 23.2439C0.0474582 23.0937 0 22.9219 0 22.7468V1.25919C0 0.724483 0.433273 0.291016 0.967742 0.291016C1.14727 0.291016 1.32325 0.340975 1.47602 0.435309Z" fill="currentColor"/>
+<path id="Rectangle_2" opacity="0.077704" fill-rule="evenodd" clip-rule="evenodd" d="M0 8.11646L7.25806 12.2801V16.362L0 8.11646Z" fill="black"/>
+<path id="Rectangle_3" opacity="0.077704" fill-rule="evenodd" clip-rule="evenodd" d="M0 8.11646L7.25806 12.1741V14.6677L0 8.11646Z" fill="black"/>
+<path id="Rectangle_4" fill-rule="evenodd" clip-rule="evenodd" d="M28.5252 0.431618L23.2026 3.70723C22.9163 3.88342 22.7419 4.19561 22.7419 4.53188V19.5605C22.7419 19.901 22.9207 20.2165 23.2128 20.3913L28.5353 23.5777C28.994 23.8523 29.5882 23.7029 29.8627 23.2441C29.9525 23.0938 30 22.922 30 22.7469V1.25626C30 0.721554 29.5667 0.288086 29.0323 0.288086C28.8532 0.288086 28.6777 0.337772 28.5252 0.431618Z" fill="currentColor"/>
+<path id="Rectangle_5" opacity="0.077704" fill-rule="evenodd" clip-rule="evenodd" d="M30 8.11646L22.7419 12.2713V16.4853L30 8.11646Z" fill="black"/>
+<path id="Rectangle_6" opacity="0.077704" fill-rule="evenodd" clip-rule="evenodd" d="M30 8.11646L22.7419 12.1705V14.7909L30 8.11646Z" fill="black"/>
+<path id="Rectangle_7" fill-rule="evenodd" clip-rule="evenodd" d="M1.47345 0.427376L15 8.72157V16.709L0 8.11424V1.25284C0 0.718135 0.433273 0.284668 0.967742 0.284668C1.14624 0.284668 1.32126 0.334058 1.47345 0.427376Z" fill="currentColor"/>
+<path id="Rectangle_8" fill-rule="evenodd" clip-rule="evenodd" d="M1.47345 0.427376L15 8.72157V16.709L0 8.11424V1.25284C0 0.718135 0.433273 0.284668 0.967742 0.284668C1.14624 0.284668 1.32126 0.334058 1.47345 0.427376Z" fill="white" fill-opacity="0.15"/>
+<path id="Rectangle_9" fill-rule="evenodd" clip-rule="evenodd" d="M28.5266 0.427376L15 8.72157V16.709L30 8.11424V1.25284C30 0.718135 29.5667 0.284668 29.0323 0.284668C28.8538 0.284668 28.6787 0.334058 28.5266 0.427376Z" fill="currentColor"/>
+<path id="Rectangle_10" fill-rule="evenodd" clip-rule="evenodd" d="M28.5266 0.427376L15 8.72157V16.709L30 8.11424V1.25284C30 0.718135 29.5667 0.284668 29.0323 0.284668C28.8538 0.284668 28.6787 0.334058 28.5266 0.427376Z" fill="white" fill-opacity="0.3"/>
+</g>
+</g>
+</svg>

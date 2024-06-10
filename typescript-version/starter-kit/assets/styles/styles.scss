@@ -1,1 +1,24 @@
 // Write your overrides
+
+// AUTHENTICATION
+.my-component {
+  .myBtn {
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  .text-field {
+    &:focus {
+      border-bottom: #007bff; // Change the border color to blue when focused
+    }
+  }
+  
+  .myBtn:hover {
+    background-color: #6a6b6c;
+  }
+}
+

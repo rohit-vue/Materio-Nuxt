@@ -125,6 +125,5 @@
     "pug": "^3",
     "stylelint-order": "6.0.3",
     "vue": "3.3.13"
-  },
-  "packageManager": "pnpm@8.6.2"
+  }
 }

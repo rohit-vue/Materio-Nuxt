@@ -227,7 +227,8 @@ const onSubmit = () => {
                 cols="12"
                 class="text-center text-base"
               >
-                <span>New on our platform?</span> <NuxtLink
+                <span>New on our platform?</span> 
+                <NuxtLink
                   class="text-primary d-inline-block"
                   :to="{ name: 'register' }"
                 >

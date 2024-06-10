@@ -19,7 +19,7 @@ export default {
   },
   VBtn: {
     // set v-btn default color to primary
-    color: 'primary',
+    color: '',
   },
   VChip: {
     elevation: 0,
@@ -48,7 +48,7 @@ export default {
   },
   VCheckbox: {
     // set v-checkbox default color to primary
-    color: 'primary',
+    color: '',
     density: 'comfortable',
     hideDetails: 'auto',
   },
@@ -104,7 +104,7 @@ export default {
   VTextField: {
     variant: 'outlined',
     density: 'comfortable',
-    color: 'primary',
+    color: '',
     hideDetails: 'auto',
   },
   VAutocomplete: {

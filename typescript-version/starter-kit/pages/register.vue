@@ -7,6 +7,7 @@ import { themeConfig } from "@themeConfig";
 
 import { VNodeRenderer } from "@layouts/components/VNodeRenderer";
 
+const router = useRouter()
 const isPasswordVisible = ref(false);
 const error = ref()
 const isLoading = ref(false);
@@ -29,12 +30,22 @@ async function handleFormSubmit() {
       return
     }
 
+    // Register the user
     await useFetch("http://127.0.0.1:8000/api/register", {
       method: "POST",
       body: form.value,
     });
 
-    useRouter().push({
+    // Send email verification link
+    await fetch("http://localhost:8000/api/verify/{id}", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ email: form.value.email }),
+    });
+
+    router.push({
       name: "verify-email",
     });
   } catch (e: any) {

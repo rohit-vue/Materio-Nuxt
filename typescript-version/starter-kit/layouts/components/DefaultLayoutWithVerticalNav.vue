@@ -3,8 +3,10 @@ import navItems from '@/navigation/vertical'
 import { themeConfig } from '@themeConfig'
 
 // Components
-import Footer from '@/layouts/components/Footer.vue'
-import NavbarThemeSwitcher from '@/layouts/components/NavbarThemeSwitcher.vue'
+// import Footer from '@/layouts/components/Footer.vue'
+import NavBarNotifications from '@/layouts/components/NavBarNotifications.vue'
+import NavSearchBar from '@/layouts/components/NavSearchBar.vue'
+// import NavbarThemeSwitcher from '@/layouts/components/NavbarThemeSwitcher.vue'
 import UserProfile from '@/layouts/components/UserProfile.vue'
 import NavBarI18n from '@core/components/I18n.vue'
 
@@ -25,14 +27,15 @@ import { VerticalNavLayout } from '@layouts'
           <VIcon icon="ri-menu-line" />
         </IconBtn>
 
-        <NavbarThemeSwitcher />
-
+        <NavSearchBar class="ms-lg-n2" />
+        <!-- <NavbarThemeSwitcher /> -->
         <VSpacer />
-
+        
         <NavBarI18n
-          v-if="themeConfig.app.i18n.enable && themeConfig.app.i18n.langConfig?.length"
-          :languages="themeConfig.app.i18n.langConfig"
+        v-if="themeConfig.app.i18n.enable && themeConfig.app.i18n.langConfig?.length"
+        :languages="themeConfig.app.i18n.langConfig"
         />
+        <NavBarNotifications class="me-2" />
         <UserProfile />
       </div>
     </template>
@@ -41,9 +44,9 @@ import { VerticalNavLayout } from '@layouts'
     <slot />
 
     <!-- 👉 Footer -->
-    <template #footer>
+    <!-- <template #footer>
       <Footer />
-    </template>
+    </template> -->
 
     <!-- 👉 Customizer -->
     <!-- <TheCustomizer /> -->

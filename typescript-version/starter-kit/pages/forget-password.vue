@@ -2,7 +2,6 @@
 <!-- eslint-disable vue/html-self-closing -->
 <!-- eslint-disable vue/html-self-closing -->
 <script setup lang="ts">
-import AuthProvider from "@/views/pages/authentication/AuthProvider.vue";
 import { themeConfig } from "@themeConfig";
 
 import { VNodeRenderer } from "@layouts/components/VNodeRenderer";
@@ -28,7 +27,7 @@ async function handleEmail(email: string) {
     }
 
     router.push({
-      name: "login"
+      name: "reset-password"
     })
   } catch (e: any) {
     console.error(e);

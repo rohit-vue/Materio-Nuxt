@@ -10,30 +10,31 @@ import { VNodeRenderer } from "@layouts/components/VNodeRenderer";
 const router = useRouter()
 
 const form = ref({
-  email: ""
+  newPassword: '',
+  confirmPassword: ''
 })
 
-async function handleEmail(email: string) {
-  try {
-    const response = await fetch("http://localhost:8000/api/send-reset-password-email", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({email}),
-    });
+// async function handleEmail(email: string) {
+//   try {
+//     const response = await fetch("http://localhost:8000/api/send-reset-password-email", {
+//       method: "POST",
+//       headers: {
+//         "Content-Type": "application/json",
+//       },
+//       body: JSON.stringify({email}),
+//     });
 
-    if(!response.ok){
-      throw new Error('Invalid email');
-    }
+//     if(!response.ok){
+//       throw new Error('Invalid email');
+//     }
 
-    router.push({
-      name: "login"
-    })
-  } catch (e: any) {
-    console.error(e);
-  }
-}
+//     router.push({
+//       name: "login"
+//     })
+//   } catch (e: any) {
+//     console.error(e);
+//   }
+// }
 
 definePageMeta({
   layout: "blank",
@@ -63,40 +64,34 @@ definePageMeta({
             <h1 class="auth-title">matter</h1>
           </div>
           <VCardText class="mt-1">
-            <h4 class="text-h4 mb-1">Forgot Password? 🔒</h4>
-            <p class="mb-0">Enter your email and we'll send you instructions to reset your password</p>
+            <h4 class="text-h4 mb-1">Verify your email ✉️</h4>
+            <p class="mb-0">Account activation link sent to your email address: <b>john.doe@email.com</b> Please follow the link inside to continue.</p>
           </VCardText>
 
           <VCardText>
-            <VForm @submit.prevent="handleEmail(form.email)">
+            <!-- <p class="mb-0">Type your 6 digit security code</p> -->
+            <VForm @submit.prevent="">
               <VRow>
-                <!-- email -->
-                <VCol cols="12">
-                  <VTextField
-                    v-model="form.email"
-                    label="Enter your email"
-                    type="email"
-                    placeholder="johndoe@email.com"
-                  />
-                </VCol>
+                <!-- Password resetting -->
+                <!-- <VCol cols="12">
+                  <vOtpInput />
+                </VCol> -->
                 <VCol col="12" class="my-component">
-                  <button class="myBtn" type="submit">
-                    Send Reset Link
-                  </button>
+                  <NuxtLink
+                    :to="{ name: 'index' }"
+                  >
+                    <VBtn class="myBtn" block type="submit"> Skip For Now </VBtn>
+                  </NuxtLink>
                 </VCol>
 
                 <!-- create account -->
                 <VCol cols="12">
                   <NuxtLink
                     class="d-flex align-center justify-center"
-                    :to="{ name: 'login' }"
+                    :to="{ name: '' }"
                   >
-                    <VIcon
-                      icon="ri-arrow-left-s-line"
-                      class=""
-                      style="color:gray"
-                    />
-                    <span style="color:gray">Back to login</span>
+                    <p class="mb-0" style="color:black">Didn't get the mail?</p>
+                    <span style="color:gray; margin-left: 5px">Resend</span>
                   </NuxtLink>
                 </VCol>
               </VRow>

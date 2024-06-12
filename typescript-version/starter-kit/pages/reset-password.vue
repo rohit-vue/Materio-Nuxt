@@ -10,30 +10,31 @@ import { VNodeRenderer } from "@layouts/components/VNodeRenderer";
 const router = useRouter()
 
 const form = ref({
-  email: ""
+  newPassword: '',
+  confirmPassword: ''
 })
 
-async function handleEmail(email: string) {
-  try {
-    const response = await fetch("http://localhost:8000/api/send-reset-password-email", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({email}),
-    });
+// async function handleEmail(email: string) {
+//   try {
+//     const response = await fetch("http://localhost:8000/api/send-reset-password-email", {
+//       method: "POST",
+//       headers: {
+//         "Content-Type": "application/json",
+//       },
+//       body: JSON.stringify({email}),
+//     });
 
-    if(!response.ok){
-      throw new Error('Invalid email');
-    }
+//     if(!response.ok){
+//       throw new Error('Invalid email');
+//     }
 
-    router.push({
-      name: "login"
-    })
-  } catch (e: any) {
-    console.error(e);
-  }
-}
+//     router.push({
+//       name: "login"
+//     })
+//   } catch (e: any) {
+//     console.error(e);
+//   }
+// }
 
 definePageMeta({
   layout: "blank",
@@ -68,20 +69,38 @@ definePageMeta({
           </VCardText>
 
           <VCardText>
-            <VForm @submit.prevent="handleEmail(form.email)">
+            <VForm @submit.prevent="">
               <VRow>
-                <!-- email -->
+                <!-- Password resetting -->
                 <VCol cols="12">
                   <VTextField
-                    v-model="form.email"
-                    label="Enter your email"
-                    type="email"
-                    placeholder="johndoe@email.com"
+                    class="text-field"
+                    v-model="form.newPassword"
+                    label="New Password"
+                    placeholder="············"
+                    :type="isPasswordVisible ? 'text' : 'password'"
+                    :append-inner-icon="
+                      isPasswordVisible ? 'ri-eye-off-line' : 'ri-eye-line'
+                    "
+                    @click:append-inner="isPasswordVisible = !isPasswordVisible"
+                  />
+                </VCol>
+                <VCol cols="12">
+                  <VTextField
+                    class="text-field"
+                    v-model="form.confirmPassword"
+                    label="Confirm Password"
+                    placeholder="············"
+                    :type="isPasswordVisible ? 'text' : 'password'"
+                    :append-inner-icon="
+                      isPasswordVisible ? 'ri-eye-off-line' : 'ri-eye-line'
+                    "
+                    @click:append-inner="isPasswordVisible = !isPasswordVisible"
                   />
                 </VCol>
                 <VCol col="12" class="my-component">
                   <button class="myBtn" type="submit">
-                    Send Reset Link
+                    Set New Password
                   </button>
                 </VCol>
 

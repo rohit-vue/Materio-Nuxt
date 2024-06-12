@@ -7,14 +7,44 @@ import { themeConfig } from "@themeConfig";
 
 import { VNodeRenderer } from "@layouts/components/VNodeRenderer";
 
+const isPasswordVisible = ref(false);
+const error = ref()
+const isLoading = ref(false);
+
 const form = ref({
   username: "",
   email: "",
   password: "",
-  privacyPolicies: false,
+  privacyPolicies: true,
 })
 
-const isPasswordVisible = ref(false);
+async function handleFormSubmit() {
+
+  try {
+    isLoading.value = true;
+    error.value = ''
+
+    if (!form.value.privacyPolicies) {
+      error.value = 'You must accept the privacy & terms'
+      return
+    }
+
+    await useFetch("http://127.0.0.1:8000/api/register", {
+      method: "POST",
+      body: form.value,
+    });
+
+    useRouter().push({
+      name: "verify-email",
+    });
+  } catch (e: any) {
+    error.value = e.message
+    console.error(e)
+  } finally {
+    isLoading.value = false;
+  }
+}
+
 
 definePageMeta({
   layout: "blank",
@@ -22,13 +52,13 @@ definePageMeta({
 </script>
 
 <template>
-  <VContainer class="vh-100 mt-16">
-    <VRow align="center" justify="center">
+  <VContainer>
+    <VRow class="my-container">
       <VCol
         cols="12"
-        md="5"
+        md="4"
         class="auth-card-v2 d-flex align-center pt-8"
-        style="background-color: rgb(var(--v-theme-surface)); width: 80"
+        style="background-color: rgb(var(--v-theme-surface))"
       >
         <VCard flat :max-width="500">
           <div
@@ -49,7 +79,7 @@ definePageMeta({
           </VCardText>
 
           <VCardText>
-            <VForm @submit.prevent="() => {}">
+            <VForm @submit.prevent="handleFormSubmit()">
               <VRow>
                 <!-- Username -->
                 <VCol cols="12">
@@ -88,19 +118,18 @@ definePageMeta({
 
                   <div class="d-flex align-center my-4">
                     <VCheckbox
-                      id="privacy-policy"
                       v-model="form.privacyPolicies"
                       inline
                     />
+
                     <VLabel for="privacy-policy" style="opacity: 1">
                       <span class="me-1 text-high-emphasis">I agree to</span>
-                      <a href="javascript:void(0)" style="color: gray"
-                        >privacy policy & terms</a
-                      >
+                      <a href="javascript:void(0)" style="color: gray">privacy policy & terms</a>
                     </VLabel>
                   </div>
 
-                  <VBtn class="myBtn" block type="submit"> Sign up </VBtn>
+                    <p v-if="error" style="color: red">{{ error }}</p>
+                    <VBtn class="myBtn" block type="submit"> Sign up </VBtn>
                 </VCol>
 
                 <!-- create account -->

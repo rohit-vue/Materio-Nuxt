@@ -20,12 +20,12 @@ injectSkinClasses()
 </script>
 
 <template>
-  <Component
-    v-bind="layoutAttrs"
-    :is="configStore.appContentLayoutNav === AppContentLayoutNav.Vertical ? DefaultLayoutWithVerticalNav : ''"
-  >
-  <AccountSidebar><slot /></AccountSidebar>
-    
+  <Component :is="configStore.appContentLayoutNav === AppContentLayoutNav.Vertical ? DefaultLayoutWithVerticalNav : ''">
+    <div style="display: flex; flex-direction: row;">
+      <AccountSidebar />
+      <slot />
+    </div>
+
   </Component>
 </template>
 

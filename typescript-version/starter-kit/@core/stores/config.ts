@@ -62,19 +62,20 @@ export const initConfigStore = () => {
   const vuetifyTheme = useTheme()
   const configStore = useConfigStore()
 
+  // to make light theme default
   watch(
     [() => configStore.theme, userPreferredColorScheme],
     () => {
       vuetifyTheme.global.name.value = configStore.theme === 'system'
         ? userPreferredColorScheme.value === 'dark'
-          ? 'dark'
+          ? 'light'
           : 'light'
         : configStore.theme
     })
 
-  onMounted(() => {
-    if (configStore.theme === 'system')
-      vuetifyTheme.global.name.value = userPreferredColorScheme.value
-  })
+  // onMounted(() => {
+  //   if (configStore.theme === 'system')
+  //     vuetifyTheme.global.name.value = userPreferredColorScheme.value
+  // })
 }
 // !SECTION

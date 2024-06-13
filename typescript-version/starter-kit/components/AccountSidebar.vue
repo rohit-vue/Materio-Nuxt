@@ -2,9 +2,9 @@
 </script>
 
 <template>
-  <VCol cols="14">
-  <h1 class="sidebar-header">Account Setting</h1>
-  <VCol cols="3" class="sidebar-container" style="box-shadow: none; margin-top: -2rem">
+  <VCol cols="3" class="sidebar-container">
+    <h1 class="sidebar-header">Account Setting</h1>
+  <!-- <VCol cols="3" class="sidebar-container" style="box-shadow: none; margin-top: -2rem"> -->
       <VCard style="background-color: inherit; box-shadow: none;">
         <VCardText style="background-color: inherit;">
           <VList style="background-color: inherit;">
@@ -44,7 +44,7 @@
           </VList>
         </VCardText>
       </VCard>
-    </VCol>
+    <!-- </VCol> -->
   </VCol>
 </template>
 

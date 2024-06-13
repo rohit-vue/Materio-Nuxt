@@ -5,8 +5,8 @@ export const Skins = {
 
 export const Theme = {
   Light: 'light',
-  Dark: 'dark',
-  System: 'system',
+  // Dark: 'dark',
+  // System: 'system',
 } as const
 
 export const Layout = {

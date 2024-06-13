@@ -7,6 +7,7 @@ import { themeConfig } from '@themeConfig'
 import { VNodeRenderer } from '@layouts/components/VNodeRenderer'
 
 const router = useRouter()
+const route = useRoute()
 
 const form = ref({
   email: '',
@@ -50,6 +51,35 @@ async function handleLogin() {
     isLoading.value = false
   }
 }
+
+onMounted(async () => {
+try {
+  const token = route.query.token;
+  if (token) {
+    const response = await fetch(`http://localhost:8000/api/verify/${token}`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      // Optionally, you may need to send additional data along with the token
+      body: JSON.stringify({ token }),
+    });
+
+    if (response.ok) {
+      // Email successfully verified, you can redirect or show a success message
+      console.log("Email verified successfully!");
+    } else {
+      // Handle error if verification fails
+      console.error("Email verification failed:", response.statusText);
+    }
+  } else {
+    // Token not found in URL params
+    console.log("Token not found in URL params.");
+  }
+} catch (error) {
+  console.error("Error occurred during email verification:", error);
+}
+});
 
 definePageMeta({
   layout: "blank",

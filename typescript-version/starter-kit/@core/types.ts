@@ -8,7 +8,7 @@ interface ExplicitThemeConfig {
       defaultLocale: string
       langConfig: I18nLanguage[]
     }
-    theme: LiteralUnion<'light' | 'dark' | 'system', string>
+    theme: LiteralUnion<'light' | '' | '', string>
     skin: ValueOf<typeof Skins>
   }
   verticalNav: {

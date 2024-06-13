@@ -36,15 +36,6 @@ async function handleFormSubmit() {
       body: form.value,
     });
 
-    // Send email verification link
-    await fetch("http://localhost:8000/api/verify/{id}", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ email: form.value.email }),
-    });
-
     router.push({
       name: "verify-email",
     });
